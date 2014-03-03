@@ -33,6 +33,13 @@
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <ul id="repos"></ul>
+
+      <div class="panel panel-primary">...</div>
+      <div class="panel panel-info">...</div>
+      <div class="panel-body">...</div>
+      <div class="panel-heading">...</div>
+
+
         <script>
             (function ($) {
                 $(document).ready(function () {
@@ -56,6 +63,7 @@
                             //console.log(response); // server response
                             //alert(response.data.length);
                             $.each(response.data, function (i, repo) {
+
                                 var li = $("<li></li>").text(repo.html_url);
                                 $("#repos").append(li);
                             });
