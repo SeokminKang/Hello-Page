@@ -47,8 +47,8 @@
 
                         success: function (response) {
 
-                            //console.log(response); // server response
-                            //alert(response.data.length);
+                            console.log(response); // server response
+                            alert(response.data.length);
                             $.each(response.data, function (i, repo) {
                                 var li = $("<li></li>").text(repo.html_url);
                                 $("#repos").append(li);
