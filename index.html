@@ -4,14 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Hello-pages</title>
-    
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-
-
-    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -30,8 +26,7 @@
         <div class="jumbotron">
           <h1>Hello-Page!!!</h1>
           <p>by Robin.K</p>
-          
-        </div>
+      </div>
 
       </div>
 
@@ -58,8 +53,8 @@
 
                         success: function (response) {
 
-                            console.log(response); // server response
-                            alert(response.data.length);
+                            //console.log(response); // server response
+                            //alert(response.data.length);
                             $.each(response.data, function (i, repo) {
                                 var li = $("<li></li>").text(repo.html_url);
                                 $("#repos").append(li);
