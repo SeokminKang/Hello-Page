@@ -81,7 +81,7 @@
                                 var footer = $('<div></div>').append(tick, star).addClass('panel-footer');
 
                                 if (repo.fork == true) {
-                                    var fork = '<span class="label label-success">Forked</span>';
+                                    var fork = "&nbsp;"+ '<span class="label label-success">Forked</span>';
                                     title.append(fork);
                                     //var heading = $('<div></div>').append(title, fork).addClass('panel-heading');
                                     var primary = $('<div></div>').append(heading, desc, footer).addClass('panel panel-info');
