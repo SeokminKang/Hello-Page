@@ -34,15 +34,15 @@
       <script src="js/bootstrap.min.js"></script>
       <ul id="repos"></ul>
 
-      <div class="panel panel-primary">...</div>
-      <div class="panel panel-info">...</div>
-      <div class="panel-body">...</div>
-      <div class="panel-heading">...</div>
-
-
-        <script>
+      <script>
             (function ($) {
                 $(document).ready(function () {
+
+                   // var panael_primary = '<div class="panel panel-primary"></div>';
+                   // var panel_info = '<div class="panel panel-info"></div>';
+                   // var panel_heading = '<div class="panel-heading"></div>';
+                   // var panel_body = '<div class="panel-body"></div>';
+                   // var panel_footer = '<div class="panel-footer"></div>';
 
                     $.ajax({
 
@@ -64,8 +64,45 @@
                             //alert(response.data.length);
                             $.each(response.data, function (i, repo) {
 
-                                var li = $("<li></li>").text(repo.html_url);
-                                $("#repos").append(li);
+                                //var li = $("<li></li>").text(repo.html_url);
+                                //$("#repos").append(li);
+                                                             
+
+                                var tmpUrl = $('<a></a>').append(repo.name).attr('href', repo.html_url);
+                                var title = $('<h3></h3>').append(tmpUrl).addClass('panel-title');
+                                var heading = $('<div></div>').append(title).addClass('panel-heading');
+
+
+                                if (repo.description.length != 0) {
+                                    var desc = $('<div></div>').append(repo.description).addClass('panel-body');
+                                }
+                                else {
+                                    var desc = $('<div></div>').append('None').addClass('panel-body');
+                                }
+                                
+                                var create = repo.created_at.substring(0, 10);
+                                var created = create + "&nbsp;";
+                                var tick = $('<span> </span>').append(created).addClass('glyphicon glyphicon-ok');
+                                var star = $('<span> </span>').append(repo.forks).addClass('glyphicon glyphicon-star');
+                                var footer = $('<div></div>').append(tick, star).addClass('panel-footer');
+
+                                if (repo.fork == true) {
+                                    var fork = '<span class="label label-success">Forked</span>';
+                                    title.append(fork);
+                                    //var heading = $('<div></div>').append(title, fork).addClass('panel-heading');
+                                    var primary = $('<div></div>').append(heading, desc, footer).addClass('panel panel-info');
+                                }
+                                else {
+                                    var primary = $('<div></div>').append(heading, desc, footer).addClass('panel panel-primary');
+                                }
+
+                                var grid = $('<div></div>').append(primary).addClass('col-xs-12 col-sm-6 col-md-4 col-lg-4');
+                                $('.row').append(grid);
+
+
+
+                                
+
                             });
 
                         }
