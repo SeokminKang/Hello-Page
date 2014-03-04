@@ -40,12 +40,6 @@
             (function ($) {
                 $(document).ready(function () {
 
-                   var panael_primary = '<div class="panel panel-primary"></div>';
-                   var panel_info = '<div class="panel panel-info"></div>';
-                   var panel_heading = '<div class="panel-heading"></div>';
-                   var panel_body = '<div class="panel-body"></div>';
-                   var panel_footer = '<div class="panel-footer"></div>';
-
                     $.ajax({
 
                         url: "https://api.github.com/users/seokminkang/repos",
@@ -101,10 +95,6 @@
 
                                 var grid = $('<div></div>').append(primary).addClass('col-xs-12 col-sm-6 col-md-4 col-lg-4');
                                 $('.git').append(grid);
-
-
-
-                                
 
                             });
 
