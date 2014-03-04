@@ -74,8 +74,8 @@
                                     var desc = $('<div></div>').append('None').addClass('panel-body');
                                 }
                                 
-                                var create = "          ";
-                                var created = create + "&nbsp;";
+                                var create = repo.created_at.substring(0, 10);
+                                var created = "&nbsp;" + create;
                                 var tick = $('<span> </span>').append(created).addClass('glyphicon glyphicon-ok');
                                 var star = $('<span> </span>').append(repo.forks).addClass('glyphicon glyphicon-star');
                                 var footer = $('<div></div>').append(tick, star).addClass('panel-footer');
