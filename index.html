@@ -38,11 +38,11 @@
             //(function ($) {
                 $(document).ready(function () {
 
-                   // var panael_primary = '<div class="panel panel-primary"></div>';
-                   // var panel_info = '<div class="panel panel-info"></div>';
-                   // var panel_heading = '<div class="panel-heading"></div>';
-                   // var panel_body = '<div class="panel-body"></div>';
-                   // var panel_footer = '<div class="panel-footer"></div>';
+                   var panael_primary = '<div class="panel panel-primary"></div>';
+                   var panel_info = '<div class="panel panel-info"></div>';
+                   var panel_heading = '<div class="panel-heading"></div>';
+                   var panel_body = '<div class="panel-body"></div>';
+                   var panel_footer = '<div class="panel-footer"></div>';
 
                     $.ajax({
 
@@ -64,8 +64,8 @@
                             //alert(response.data.length);
                             $.each(response.data, function (i, repo) {
 
-                                //var li = $("<li></li>").text(repo.html_url);
-                                //$("#repos").append(li);
+                                var li = $("<li></li>").text(repo.html_url);
+                                $("#repos").append(li);
                                                              
 
                                 var tmpUrl = $('<a></a>').append(repo.name).attr('href', repo.html_url);
