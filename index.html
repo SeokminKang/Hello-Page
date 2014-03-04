@@ -23,13 +23,10 @@
   <body>
 
       <div class="container">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-            <div class="jumbotron">
-              <h1>Hello-Page!!!</h1>
-              <p class="lead">by Robin.K</p>
-            </div>
-           </div>
+        <div class="jumbotron">
+          <h1>Hello-Page!!!</h1>
+          <p class="lead">by Robin.K</p>
+        </div>
         <div class="git"></div>
       </div>
       <ul id="repos"></ul>
@@ -77,7 +74,7 @@
                                     var desc = $('<div></div>').append('None').addClass('panel-body');
                                 }
                                 
-                                var create = repo.created_at.substring(0, 10);
+                                var create = "          ";
                                 var created = create + "&nbsp;";
                                 var tick = $('<span> </span>').append(created).addClass('glyphicon glyphicon-ok');
                                 var star = $('<span> </span>').append(repo.forks).addClass('glyphicon glyphicon-star');
