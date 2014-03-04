@@ -23,18 +23,19 @@
   <body>
 
       <div class="container">
-        <div class="jumbotron">
-          <h1>Hello-Page!!!</h1>
-          <p>by Robin.K</p>
-        </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
+            <div class="jumbotron">
+              <h1>Hello-Page!!!</h1>
+              <p class="lead">by Robin.K</p>
+            </div>
+           </div>
         <div class="git"></div>
-
       </div>
+      <ul id="repos"></ul>
 
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
-      <ul id="repos"></ul>
 
       <script>
             (function ($) {
@@ -62,8 +63,7 @@
 
                                 //var li = $("<li></li>").text(repo.html_url);
                                 //$("#repos").append(li);
-
-                                                             
+                                                  
 
                                 var tmpUrl = $('<a></a>').append(repo.name).attr('href', repo.html_url);
                                 var title = $('<h3></h3>').append(tmpUrl).addClass('panel-title');
@@ -97,17 +97,10 @@
                                 $('.git').append(grid);
 
                             });
-
                         }
-
                     });
-
-
                 });
             })(jQuery);
         </script>
-
-     
-    
   </body>
 </html>
