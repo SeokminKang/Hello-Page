@@ -66,6 +66,13 @@
 
                                 var li = $("<li></li>").text(repo.html_url);
                                 $("#repos").append(li);
+
+                                var li = $("<li></li>").text(repo.name);
+                                $("#reponame").append(li);
+
+                                var li = $("<li></li>").text(repo.description);
+                                $("#repodesc").append(li);
+
                                                              
 
                                 var tmpUrl = $('<a></a>').append(repo.name).attr('href', repo.html_url);
